@@ -6,8 +6,8 @@ class Nequi {
     private var saldoDisponible = 4500
 
     fun iniciar() {
-        println("Bienvenido a Nequi Colombia")
-        var intentos = 3
+        println("Bienvenido a Nequi ")
+        var intentos = 2
 
         while (intentos > 0) {
             println("Ingresa tu número de celular:")
@@ -25,11 +25,11 @@ class Nequi {
                 } while (realizarAccion())
             } else {
                 intentos--
-                println("¡Upps! Parece que tus datos de acceso no son correctos.")
+                println("Parece que tus datos de acceso no son correctos.")
                 if (intentos > 0) {
                     println("Tienes $intentos intentos más.")
                 } else {
-                    println("Lo siento, has alcanzado el máximo número de intentos.")
+                    println(" has alcanzado el máximo número de intentos.")
                 }
             }
         }
@@ -40,11 +40,11 @@ class Nequi {
     }
 
     private fun mostrarMenu() {
-        println("----------- Menú -----------")
-        println("1. Sacar")
-        println("2. Envía")
-        println("3. Recarga")
-        println("4. Salir")
+        println("----------------------")
+        println("1 Sacar")
+        println("2 Envía")
+        println("3 Recarga")
+        println("4 Salir")
         println("                             ")
     }
 
@@ -90,7 +90,7 @@ class Nequi {
     }
 
     private fun enviarDinero() {
-        println("Ingresa el número de teléfono al que deseas enviar dinero:")
+        println("Ingresa el número de celular para enviar el dinero:")
         val phoneNumber = readLine()
 
         println("Ingresa el valor a enviar:")
@@ -100,7 +100,7 @@ class Nequi {
             saldoDisponible -= valorEnviar
             println("Envío exitoso. Has enviado $valorEnviar a $phoneNumber.")
         } else {
-            println("No tienes suficiente saldo para enviar esa cantidad de dinero.")
+            println("No tienes suficiente saldo .")
         }
     }
 
@@ -108,10 +108,10 @@ class Nequi {
         println("Ingresa el valor a recargar:")
         val valorRecarga = readLine()?.toIntOrNull() ?: return
 
-        println("¿Confirmas la recarga de $valorRecarga? (s/n)")
+        println("¿Confirmas la recarga de $valorRecarga? (si/n)")
         val confirmacion = readLine()
 
-        if (confirmacion?.equals("s", ignoreCase = true) == true) {
+        if (confirmacion?.equals("si", ignoreCase = true) == true) {
             saldoDisponible += valorRecarga
             println("Recarga exitosa. Nuevo saldo disponible: $saldoDisponible")
         } else {
