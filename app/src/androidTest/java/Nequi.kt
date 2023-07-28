@@ -116,6 +116,7 @@ class Nequi {
             println("Recarga exitosa. Nuevo saldo disponible: $saldoDisponible")
         } else {
             println("Recarga cancelada.")
+
         }
     }
 }
